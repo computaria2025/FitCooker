@@ -51,13 +51,16 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        // Custom colors for FitCooker
-        fitcooker: {
-          yellow: "#FFD700",
-          orange: "#FF7F00",
-          black: "#1A1A1A",
-          white: "#FFFFFF",
+        black: "#000000",
+        yellow: {
+          DEFAULT: "#FFD700",
+          light: "#FFEB99",
         },
+        orange: {
+          DEFAULT: "#FF8C00",
+          light: "#FFC380",
+        },
+        white: "#FFFFFF",
       },
       borderRadius: {
         lg: "var(--radius)",

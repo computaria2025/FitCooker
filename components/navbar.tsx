@@ -1,121 +1,117 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Search, Menu, X, User, Heart, Plus } from "lucide-react"
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
-import { useMediaQuery } from "@/hooks/use-mobile"
+import { Search, Menu, X, Sun, Moon } from "lucide-react"
+import { useTheme } from "next-themes"
+import { cn } from "@/lib/utils"
 
-export function Navbar() {
-  const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const isMobile = useMediaQuery("(max-width: 768px)")
+export default function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark")
+
+  const navLinks = [
+    { name: "Home", href: "/" },
+    { name: "Recipes", href: "/recipes" },
+    { name: "Add Recipe", href: "/add-recipe" },
+    { name: "My Profile", href: "/profile" },
+  ]
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center">
-        <div className="flex w-full justify-between items-center">
-          <div className="flex items-center gap-2">
-            {isMobile && (
-              <Sheet>
-                <SheetTrigger asChild>
-                  <Button variant="ghost" size="icon" className="md:hidden">
-                    <Menu className="h-5 w-5" />
-                    <span className="sr-only">Toggle menu</span>
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="left" className="w-[300px] sm:w-[400px]">
-                  <nav className="flex flex-col gap-4 mt-8">
-                    <Link href="/" className="text-lg font-semibold hover:text-primary transition-colors">
-                      Início
-                    </Link>
-                    <Link href="/categorias" className="text-lg font-semibold hover:text-primary transition-colors">
-                      Categorias
-                    </Link>
-                    <Link href="/populares" className="text-lg font-semibold hover:text-primary transition-colors">
-                      Populares
-                    </Link>
-                    <Link href="/recentes" className="text-lg font-semibold hover:text-primary transition-colors">
-                      Recentes
-                    </Link>
-                  </nav>
-                </SheetContent>
-              </Sheet>
-            )}
+    <header
+      className={cn(
+        "fixed top-0 w-full z-50 transition-all duration-300",
+        isScrolled ? "bg-background/95 backdrop-blur-md shadow-md" : "bg-transparent",
+      )}
+    >
+      <div className="container mx-auto px-4">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary">
+              FitCooker
+            </span>
+          </Link>
 
-            <Link href="/" className="flex items-center gap-2">
-              <span className="font-bold text-xl md:text-2xl">
-                <span className="text-fitcooker-orange">Fit</span>
-                <span className="text-fitcooker-yellow">Cooker</span>
-              </span>
-            </Link>
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className="text-foreground hover:text-primary transition-colors duration-200"
+              >
+                {link.name}
+              </Link>
+            ))}
+          </nav>
+
+          <div className="hidden md:flex items-center space-x-4">
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+              <Input
+                type="search"
+                placeholder="Search recipes..."
+                className="pl-10 w-[200px] focus:w-[300px] transition-all duration-300"
+              />
+            </div>
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
+              {mounted && theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+            </Button>
+            <Button className="bg-primary text-primary-foreground hover:bg-primary/90">Sign In</Button>
           </div>
 
-          {!isMobile && (
-            <nav className="mx-6 hidden md:flex items-center gap-6">
-              <Link href="/" className="text-sm font-medium hover:text-primary transition-colors">
-                Início
-              </Link>
-              <Link href="/categorias" className="text-sm font-medium hover:text-primary transition-colors">
-                Categorias
-              </Link>
-              <Link href="/populares" className="text-sm font-medium hover:text-primary transition-colors">
-                Populares
-              </Link>
-              <Link href="/recentes" className="text-sm font-medium hover:text-primary transition-colors">
-                Recentes
-              </Link>
-            </nav>
-          )}
-
-          <div className="flex items-center gap-2">
-            {isSearchOpen ? (
-              <div className="flex items-center">
-                <Input type="search" placeholder="Buscar receitas..." className="w-[200px] md:w-[300px]" autoFocus />
-                <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(false)}>
-                  <X className="h-5 w-5" />
-                  <span className="sr-only">Fechar busca</span>
-                </Button>
-              </div>
-            ) : (
-              <Button variant="ghost" size="icon" onClick={() => setIsSearchOpen(true)}>
-                <Search className="h-5 w-5" />
-                <span className="sr-only">Buscar</span>
-              </Button>
-            )}
-
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/favoritos">
-                <Heart className="h-5 w-5" />
-                <span className="sr-only">Favoritos</span>
-              </Link>
+          {/* Mobile Menu Button */}
+          <div className="flex md:hidden items-center space-x-2">
+            <Button variant="ghost" size="icon" onClick={toggleTheme} className="rounded-full">
+              {mounted && theme === "dark" ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
             </Button>
-
-            <Button variant="ghost" size="icon" asChild>
-              <Link href="/perfil">
-                <User className="h-5 w-5" />
-                <span className="sr-only">Perfil</span>
-              </Link>
-            </Button>
-
-            <Button variant="default" size="sm" className="hidden md:flex" asChild>
-              <Link href="/adicionar-receita">
-                <Plus className="h-4 w-4 mr-2" />
-                Adicionar Receita
-              </Link>
-            </Button>
-
-            <Button variant="default" size="icon" className="md:hidden" asChild>
-              <Link href="/adicionar-receita">
-                <Plus className="h-5 w-5" />
-                <span className="sr-only">Adicionar Receita</span>
-              </Link>
+            <Button variant="ghost" size="icon" onClick={toggleMenu} className="rounded-full">
+              {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </Button>
           </div>
         </div>
       </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-background border-t">
+          <div className="container mx-auto px-4 py-3">
+            <div className="relative mb-4">
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" size={18} />
+              <Input type="search" placeholder="Search recipes..." className="pl-10 w-full" />
+            </div>
+            <nav className="flex flex-col space-y-3">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className="text-foreground hover:text-primary py-2 transition-colors duration-200"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+              <Button className="bg-primary text-primary-foreground hover:bg-primary/90 w-full mt-2">Sign In</Button>
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   )
 }
