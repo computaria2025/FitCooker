@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitCooker - Receitas Saudáveis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <h1>Fit<span>Cooker</span></h1>
+            </div>
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="#" class="ativo">Início</a></li>
+                    <li><a href="receitas.html">Receitas</a></li>
+                    <li><a href="categorias.html">Categorias</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="acoes-usuario">
+                <button class="botao-pesquisa" id="botaoPesquisa">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <a href="perfil.html" class="botao-perfil">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <a href="adicionar-receita.html" class="botao-adicionar">Adicionar Receita</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="barra-pesquisa" id="barraPesquisa">
+        <div class="container">
+            <form class="formulario-pesquisa">
+                <input type="text" placeholder="Pesquisar receitas..." class="campo-pesquisa">
+                <button type="submit" class="botao-enviar-pesquisa">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="banner">
+        <div class="container">
+            <div class="conteudo-banner">
+                <h2>Descubra receitas saudáveis e deliciosas</h2>
+                <p>Encontre as melhores receitas fit para atingir seus objetivos</p>
+                <a href="receitas.html" class="botao-primario">Explorar Receitas</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="categorias">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <h2>Categorias</h2>
+                <a href="categorias.html" class="ver-todos">Ver todas</a>
+            </div>
+            <div class="lista-categorias">
+                <a href="categoria.html?tag=bulking" class="cartao-categoria">
+                    <div class="icone-categoria bulking"></div>
+                    <h3>Bulking</h3>
+                </a>
+                <a href="categoria.html?tag=cutting" class="cartao-categoria">
+                    <div class="icone-categoria cutting"></div>
+                    <h3>Cutting</h3>
+                </a>
+                <a href="categoria.html?tag=lowcarb" class="cartao-categoria">
+                    <div class="icone-categoria lowcarb"></div>
+                    <h3>Low Carb</h3>
+                </a>
+                <a href="categoria.html?tag=vegetariano" class="cartao-categoria">
+                    <div class="icone-categoria vegetariano"></div>
+                    <h3>Vegetariano</h3>
+                </a>
+                <a href="categoria.html?tag=cheatmeal" class="cartao-categoria">
+                    <div class="icone-categoria cheatmeal"></div>
+                    <h3>Sair da Dieta</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="receitas-destaque">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <h2>Receitas em Destaque</h2>
+                <a href="receitas.html" class="ver-todos">Ver todas</a>
+            </div>
+            <div class="lista-receitas">
+                <div class="cartao-receita">
+                    <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                    <div class="conteudo-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Bulking</span>
+                            <span class="tag">Proteico</span>
+                        </div>
+                        <h3>Omelete Proteico com Legumes</h3>
+                        <div class="info-receita">
+                            <div class="avaliacao">
+                                <span class="estrelas">★★★★★</span>
+                                <span class="numero-avaliacoes">(32)</span>
+                            </div>
+                            <div class="tempo-preparo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>15 min</span>
+                            </div>
+                        </div>
+                        <div class="macros-resumo">
+                            <div class="macro">
+                                <span class="valor">320</span>
+                                <span class="rotulo">kcal</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">28g</span>
+                                <span class="rotulo">Prot</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">12g</span>
+                                <span class="rotulo">Carb</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">18g</span>
+                                <span class="rotulo">Gord</span>
+                            </div>
+                        </div>
+                        <a href="receita.html?id=1" class="botao-ver-receita">Ver Receita</a>
+                    </div>
+                </div>
+
+                <div class="cartao-receita">
+                    <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                    <div class="conteudo-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Cutting</span>
+                            <span class="tag">Low Carb</span>
+                        </div>
+                        <h3>Bowl de Frango com Quinoa</h3>
+                        <div class="info-receita">
+                            <div class="avaliacao">
+                                <span class="estrelas">★★★★☆</span>
+                                <span class="numero-avaliacoes">(18)</span>
+                            </div>
+                            <div class="tempo-preparo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>25 min</span>
+                            </div>
+                        </div>
+                        <div class="macros-resumo">
+                            <div class="macro">
+                                <span class="valor">380</span>
+                                <span class="rotulo">kcal</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">35g</span>
+                                <span class="rotulo">Prot</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">30g</span>
+                                <span class="rotulo">Carb</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">12g</span>
+                                <span class="rotulo">Gord</span>
+                            </div>
+                        </div>
+                        <a href="receita.html?id=2" class="botao-ver-receita">Ver Receita</a>
+                    </div>
+                </div>
+
+                <div class="cartao-receita">
+                    <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                    <div class="conteudo-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Sair da Dieta</span>
+                            <span class="tag">Sobremesa</span>
+                        </div>
+                        <h3>Brownie Proteico de Chocolate</h3>
+                        <div class="info-receita">
+                            <div class="avaliacao">
+                                <span class="estrelas">★★★★★</span>
+                                <span class="numero-avaliacoes">(45)</span>
+                            </div>
+                            <div class="tempo-preparo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>40 min</span>
+                            </div>
+                        </div>
+                        <div class="macros-resumo">
+                            <div class="macro">
+                                <span class="valor">220</span>
+                                <span class="rotulo">kcal</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">15g</span>
+                                <span class="rotulo">Prot</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">25g</span>
+                                <span class="rotulo">Carb</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">8g</span>
+                                <span class="rotulo">Gord</span>
+                            </div>
+                        </div>
+                        <a href="receita.html?id=3" class="botao-ver-receita">Ver Receita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="receitas-populares">
+        <div class="container">
+            <div class="cabecalho-secao">
+                <h2>Mais Populares</h2>
+                <a href="receitas.html?sort=popular" class="ver-todos">Ver todas</a>
+            </div>
+            <div class="lista-receitas">
+                <div class="cartao-receita">
+                    <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                    <div class="conteudo-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Vegetariano</span>
+                            <span class="tag">Proteico</span>
+                        </div>
+                        <h3>Salada de Grão de Bico com Tofu</h3>
+                        <div class="info-receita">
+                            <div class="avaliacao">
+                                <span class="estrelas">★★★★☆</span>
+                                <span class="numero-avaliacoes">(27)</span>
+                            </div>
+                            <div class="tempo-preparo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>20 min</span>
+                            </div>
+                        </div>
+                        <div class="macros-resumo">
+                            <div class="macro">
+                                <span class="valor">350</span>
+                                <span class="rotulo">kcal</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">22g</span>
+                                <span class="rotulo">Prot</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">40g</span>
+                                <span class="rotulo">Carb</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">10g</span>
+                                <span class="rotulo">Gord</span>
+                            </div>
+                        </div>
+                        <a href="receita.html?id=4" class="botao-ver-receita">Ver Receita</a>
+                    </div>
+                </div>
+
+                <div class="cartao-receita">
+                    <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                    <div class="conteudo-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Bulking</span>
+                            <span class="tag">Alto Carb</span>
+                        </div>
+                        <h3>Panqueca de Aveia com Banana</h3>
+                        <div class="info-receita">
+                            <div class="avaliacao">
+                                <span class="estrelas">★★★★★</span>
+                                <span class="numero-avaliacoes">(56)</span>
+                            </div>
+                            <div class="tempo-preparo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>15 min</span>
+                            </div>
+                        </div>
+                        <div class="macros-resumo">
+                            <div class="macro">
+                                <span class="valor">420</span>
+                                <span class="rotulo">kcal</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">15g</span>
+                                <span class="rotulo">Prot</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">65g</span>
+                                <span class="rotulo">Carb</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">10g</span>
+                                <span class="rotulo">Gord</span>
+                            </div>
+                        </div>
+                        <a href="receita.html?id=5" class="botao-ver-receita">Ver Receita</a>
+                    </div>
+                </div>
+
+                <div class="cartao-receita">
+                    <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                    <div class="conteudo-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Cutting</span>
+                            <span class="tag">Proteico</span>
+                        </div>
+                        <h3>Wrap de Frango com Abacate</h3>
+                        <div class="info-receita">
+                            <div class="avaliacao">
+                                <span class="estrelas">★★★★☆</span>
+                                <span class="numero-avaliacoes">(38)</span>
+                            </div>
+                            <div class="tempo-preparo">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                <span>10 min</span>
+                            </div>
+                        </div>
+                        <div class="macros-resumo">
+                            <div class="macro">
+                                <span class="valor">380</span>
+                                <span class="rotulo">kcal</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">30g</span>
+                                <span class="rotulo">Prot</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">25g</span>
+                                <span class="rotulo">Carb</span>
+                            </div>
+                            <div class="macro">
+                                <span class="valor">18g</span>
+                                <span class="rotulo">Gord</span>
+                            </div>
+                        </div>
+                        <a href="receita.html?id=6" class="botao-ver-receita">Ver Receita</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cadastro-newsletter">
+        <div class="container">
+            <div class="conteudo-newsletter">
+                <h2>Receba novas receitas toda semana</h2>
+                <p>Inscreva-se para receber as melhores receitas fit diretamente no seu e-mail</p>
+                <form class="formulario-newsletter">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="botao-primario">Inscrever-se</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="conteudo-rodape">
+                <div class="coluna-rodape sobre-site">
+                    <h3>FitCooker</h3>
+                    <p>Sua plataforma de receitas saudáveis para alcançar seus objetivos fitness.</p>
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="coluna-rodape links-rapidos">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#">Início</a></li>
+                        <li><a href="receitas.html">Receitas</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape categorias-rodape">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="categoria.html?tag=bulking">Bulking</a></li>
+                        <li><a href="categoria.html?tag=cutting">Cutting</a></li>
+                        <li><a href="categoria.html?tag=lowcarb">Low Carb</a></li>
+                        <li><a href="categoria.html?tag=vegetariano">Vegetariano</a></li>
+                        <li><a href="categoria.html?tag=cheatmeal">Sair da Dieta</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape contato">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:contato@fitcooker.com">contato@fitcooker.com</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>São Paulo, SP - Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="direitos-autorais">
+                <p>&copy; 2025 FitCooker. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

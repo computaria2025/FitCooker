@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receita - FitCooker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <h1>Fit<span>Cooker</span></h1>
+            </div>
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="receitas.html" class="ativo">Receitas</a></li>
+                    <li><a href="categorias.html">Categorias</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="acoes-usuario">
+                <button class="botao-pesquisa" id="botaoPesquisa">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <a href="perfil.html" class="botao-perfil">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <a href="adicionar-receita.html" class="botao-adicionar">Adicionar Receita</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="barra-pesquisa" id="barraPesquisa">
+        <div class="container">
+            <form class="formulario-pesquisa">
+                <input type="text" placeholder="Pesquisar receitas..." class="campo-pesquisa">
+                <button type="submit" class="botao-enviar-pesquisa">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <main class="pagina-receita">
+        <div class="container">
+            <div class="navegacao-migalhas">
+                <a href="index.html">Início</a>
+                <span>/</span>
+                <a href="receitas.html">Receitas</a>
+                <span>/</span>
+                <span class="atual">Omelete Proteico com Legumes</span>
+            </div>
+
+            <div class="conteudo-receita-detalhada">
+                <div class="cabecalho-receita">
+                    <h1>Omelete Proteico com Legumes</h1>
+                    <div class="meta-receita">
+                        <div class="tags-receita">
+                            <span class="tag">Bulking</span>
+                            <span class="tag">Proteico</span>
+                        </div>
+                        <div class="info-autor">
+                            <img src="/placeholder.svg?height=40&width=40" alt="Foto do autor" class="avatar-autor">
+                            <div class="dados-autor">
+                                <span class="nome-autor">João Silva</span>
+                                <span class="data-publicacao">Publicado em 15/03/2025</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="imagem-receita-principal">
+                    <img src="/placeholder.svg?height=500&width=900" alt="Omelete Proteico com Legumes">
+                </div>
+
+                <div class="avaliacao-receita">
+                    <div class="estrelas-avaliacao">
+                        <span class="estrelas">★★★★★</span>
+                        <span class="numero-avaliacoes">(32 avaliações)</span>
+                    </div>
+                    <button class="botao-avaliar" id="botaoAvaliar">Avaliar Receita</button>
+                </div>
+
+                <div class="modal-avaliacao" id="modalAvaliacao">
+                    <div class="conteudo-modal">
+                        <button class="fechar-modal">&times;</button>
+                        <h3>Avaliar Receita</h3>
+                        <div class="selecao-estrelas">
+                            <span class="estrela" data-valor="1">☆</span>
+                            <span class="estrela" data-valor="2">☆</span>
+                            <span class="estrela" data-valor="3">☆</span>
+                            <span class="estrela" data-valor="4">☆</span>
+                            <span class="estrela" data-valor="5">☆</span>
+                        </div>
+                        <textarea placeholder="Deixe seu comentário (opcional)"></textarea>
+                        <button class="botao-enviar-avaliacao">Enviar Avaliação</button>
+                    </div>
+                </div>
+
+                <div class="grid-receita">
+                    <div class="coluna-principal">
+                        <section class="secao-receita">
+                            <h2>Descrição</h2>
+                            <p>Este omelete proteico é perfeito para quem busca uma refeição rápida, saborosa e rica em proteínas. Ideal para o café da manhã ou pós-treino, esta receita combina ovos inteiros com claras extras para aumentar o teor proteico, além de incluir uma variedade de legumes que adicionam nutrientes essenciais e fibras.</p>
+                        </section>
+
+                        <section class="secao-receita">
+                            <h2>Ingredientes</h2>
+                            <ul class="lista-ingredientes">
+                                <li>
+                                    <span class="quantidade">2</span>
+                                    <span class="item">ovos inteiros</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">3</span>
+                                    <span class="item">claras de ovo</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">1/4</span>
+                                    <span class="item">pimentão vermelho picado</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">1/4</span>
+                                    <span class="item">cebola picada</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">1/2</span>
+                                    <span class="item">tomate sem sementes picado</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">1/4 xícara</span>
+                                    <span class="item">espinafre fresco</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">30g</span>
+                                    <span class="item">queijo cottage (opcional)</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">1 colher de chá</span>
+                                    <span class="item">azeite de oliva</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">a gosto</span>
+                                    <span class="item">sal e pimenta</span>
+                                </li>
+                                <li>
+                                    <span class="quantidade">a gosto</span>
+                                    <span class="item">ervas frescas picadas (cebolinha, salsa)</span>
+                                </li>
+                            </ul>
+                        </section>
+
+                        <section class="secao-receita">
+                            <h2>Modo de Preparo</h2>
+                            <ol class="passos-preparo">
+                                <li>
+                                    <div class="numero-passo">1</div>
+                                    <div class="texto-passo">Em uma tigela, bata os ovos inteiros e as claras até ficarem bem homogêneos. Tempere com sal e pimenta a gosto.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">2</div>
+                                    <div class="texto-passo">Aqueça uma frigideira antiaderente em fogo médio e adicione o azeite de oliva.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">3</div>
+                                    <div class="texto-passo">Adicione a cebola e o pimentão picados e refogue por cerca de 2 minutos, até começarem a amolecer.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">4</div>
+                                    <div class="texto-passo">Adicione o tomate picado e o espinafre, cozinhando por mais 1 minuto até o espinafre murchar levemente.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">5</div>
+                                    <div class="texto-passo">Despeje a mistura de ovos sobre os legumes na frigideira, espalhando uniformemente.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">6</div>
+                                    <div class="texto-passo">Cozinhe em fogo médio-baixo por cerca de 3-4 minutos, até que a parte inferior esteja dourada e a parte superior comece a firmar.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">7</div>
+                                    <div class="texto-passo">Se estiver usando queijo cottage, espalhe-o sobre metade do omelete.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">8</div>
+                                    <div class="texto-passo">Com uma espátula, dobre cuidadosamente o omelete ao meio e cozinhe por mais 1 minuto.</div>
+                                </li>
+                                <li>
+                                    <div class="numero-passo">9</div>
+                                    <div class="texto-passo">Transfira para um prato, polvilhe com as ervas frescas picadas e sirva imediatamente.</div>
+                                </li>
+                            </ol>
+                        </section>
+
+                        <section class="secao-receita">
+                            <h2>Dicas</h2>
+                            <ul class="lista-dicas">
+                                <li>Para uma versão ainda mais proteica, adicione 30g de peito de frango desfiado previamente cozido.</li>
+                                <li>Você pode substituir o queijo cottage por queijo feta ou mussarela light para variar o sabor.</li>
+                                <li>Para reduzir o teor de gordura, use apenas claras de ovo.</li>
+                                <li>Esta receita pode ser preparada com antecedência e aquecida no micro-ondas para um café da manhã rápido.</li>
+                            </ul>
+                        </section>
+
+                        <section class="secao-comentarios">
+                            <h2>Comentários (8)</h2>
+                            <div class="lista-comentarios">
+                                <div class="comentario">
+                                    <div class="cabecalho-comentario">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="Avatar do usuário" class="avatar-comentario">
+                                        <div class="info-comentario">
+                                            <span class="nome-usuario">Maria Oliveira</span>
+                                            <div class="avaliacao-usuario">
+                                                <span class="estrelas">★★★★★</span>
+                                                <span class="data-comentario">10/03/2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="texto-comentario">Fiz essa receita hoje para o café da manhã e ficou incrível! Adicionei um pouco de pimenta caiena para dar um toque picante e ficou perfeito. Vou fazer novamente com certeza!</p>
+                                </div>
+                                <div class="comentario">
+                                    <div class="cabecalho-comentario">
+                                        <img src="/placeholder.svg?height=40&width=40" alt="Avatar do usuário" class="avatar-comentario">
+                                        <div class="info-comentario">
+                                            <span class="nome-usuario">Carlos Santos</span>
+                                            <div class="avaliacao-usuario">
+                                                <span class="estrelas">★★★★☆</span>
+                                                <span class="data-comentario">05/03/2025</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="texto-comentario">Muito bom! Substitui o queijo cottage por queijo minas light e ficou ótimo. Só achei que poderia ter um pouco mais de tempero.</p>
+                                </div>
+                                <div class="ver-mais-comentarios">
+                                    <button class="botao-ver-mais">Ver mais comentários</button>
+                                </div>
+                            </div>
+                            <div class="formulario-comentario">
+                                <h3>Deixe seu comentário</h3>
+                                <textarea placeholder="Escreva seu comentário aqui..." class="campo-comentario"></textarea>
+                                <button class="botao-enviar-comentario">Enviar Comentário</button>
+                            </div>
+                        </section>
+                    </div>
+
+                    <div class="coluna-lateral">
+                        <div class="card-info-nutricional">
+                            <h3>Informação Nutricional</h3>
+                            <div class="porcao-info">
+                                <span>Porção:</span>
+                                <span>1 omelete completo</span>
+                            </div>
+                            <div class="tabela-nutricional">
+                                <div class="linha-tabela cabecalho-tabela">
+                                    <span>Nutriente</span>
+                                    <span>Quantidade</span>
+                                    <span>% VD*</span>
+                                </div>
+                                <div class="linha-tabela">
+                                    <span>Calorias</span>
+                                    <span>320 kcal</span>
+                                    <span>16%</span>
+                                </div>
+                                <div class="linha-tabela destaque">
+                                    <span>Proteínas</span>
+                                    <span>28g</span>
+                                    <span>56%</span>
+                                </div>
+                                <div class="linha-tabela">
+                                    <span>Carboidratos</span>
+                                    <span>12g</span>
+                                    <span>4%</span>
+                                </div>
+                                <div class="linha-tabela">
+                                    <span>Gorduras Totais</span>
+                                    <span>18g</span>
+                                    <span>33%</span>
+                                </div>
+                                <div class="linha-tabela sub-item">
+                                    <span>Gorduras Saturadas</span>
+                                    <span>5g</span>
+                                    <span>25%</span>
+                                </div>
+                                <div class="linha-tabela">
+                                    <span>Fibras</span>
+                                    <span>3g</span>
+                                    <span>12%</span>
+                                </div>
+                                <div class="linha-tabela">
+                                    <span>Sódio</span>
+                                    <span>450mg</span>
+                                    <span>19%</span>
+                                </div>
+                            </div>
+                            <div class="nota-vd">
+                                <p>* Valores Diários de referência com base em uma dieta de 2.000 kcal.</p>
+                            </div>
+                            <div class="grafico-macros">
+                                <h4>Distribuição de Macronutrientes</h4>
+                                <div class="barras-macros">
+                                    <div class="barra-macro proteina" style="width: 48%;">
+                                        <span class="rotulo-macro">Proteínas</span>
+                                        <span class="valor-macro">48%</span>
+                                    </div>
+                                    <div class="barra-macro carboidrato" style="width: 16%;">
+                                        <span class="rotulo-macro">Carboidratos</span>
+                                        <span class="valor-macro">16%</span>
+                                    </div>
+                                    <div class="barra-macro gordura" style="width: 36%;">
+                                        <span class="rotulo-macro">Gorduras</span>
+                                        <span class="valor-macro">36%</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-tempo-preparo">
+                            <h3>Tempo de Preparo</h3>
+                            <div class="tempos">
+                                <div class="tempo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    <div class="info-tempo">
+                                        <span class="rotulo-tempo">Preparo</span>
+                                        <span class="valor-tempo">10 min</span>
+                                    </div>
+                                </div>
+                                <div class="tempo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 3v3a2 2 0 0 1-2 2H3m18 0h-3a2 2 0 0 1-2-2V3m0 18v-3a2 2 0 0 1 2-2h3M3 16h3a2 2 0 0 1 2 2v3"></path></svg>
+                                    <div class="info-tempo">
+                                        <span class="rotulo-tempo">Cozimento</span>
+                                        <span class="valor-tempo">5 min</span>
+                                    </div>
+                                </div>
+                                <div class="tempo total">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    <div class="info-tempo">
+                                        <span class="rotulo-tempo">Total</span>
+                                        <span class="valor-tempo">15 min</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-dificuldade">
+                            <h3>Dificuldade</h3>
+                            <div class="nivel-dificuldade facil">
+                                <div class="barras-dificuldade">
+                                    <span class="barra ativa"></span>
+                                    <span class="barra"></span>
+                                    <span class="barra"></span>
+                                </div>
+                                <span class="texto-dificuldade">Fácil</span>
+                            </div>
+                        </div>
+
+                        <div class="card-porcoes">
+                            <h3>Porções</h3>
+                            <div class="controle-porcoes">
+                                <button class="botao-porcao diminuir">-</button>
+                                <span class="numero-porcoes">1</span>
+                                <button class="botao-porcao aumentar">+</button>
+                            </div>
+                        </div>
+
+                        <div class="card-acoes">
+                            <button class="botao-acao imprimir">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                                Imprimir Receita
+                            </button>
+                            <button class="botao-acao salvar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                                Salvar Receita
+                            </button>
+                            <button class="botao-acao compartilhar">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                                Compartilhar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <section class="receitas-relacionadas">
+                <h2>Receitas Relacionadas</h2>
+                <div class="lista-receitas">
+                    <div class="cartao-receita">
+                        <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                        <div class="conteudo-receita">
+                            <div class="tags-receita">
+                                <span class="tag">Bulking</span>
+                                <span class="tag">Proteico</span>
+                            </div>
+                            <h3>Panqueca Proteica de Banana</h3>
+                            <div class="info-receita">
+                                <div class="avaliacao">
+                                    <span class="estrelas">★★★★☆</span>
+                                    <span class="numero-avaliacoes">(24)</span>
+                                </div>
+                                <div class="tempo-preparo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    <span>20 min</span>
+                                </div>
+                            </div>
+                            <a href="receita.html?id=7" class="botao-ver-receita">Ver Receita</a>
+                        </div>
+                    </div>
+
+                    <div class="cartao-receita">
+                        <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                        <div class="conteudo-receita">
+                            <div class="tags-receita">
+                                <span class="tag">Cutting</span>
+                                <span class="tag">Proteico</span>
+                            </div>
+                            <h3>Bowl de Claras com Vegetais</h3>
+                            <div class="info-receita">
+                                <div class="avaliacao">
+                                    <span class="estrelas">★★★★★</span>
+                                    <span class="numero-avaliacoes">(18)</span>
+                                </div>
+                                <div class="tempo-preparo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    <span>10 min</span>
+                                </div>
+                            </div>
+                            <a href="receita.html?id=8" class="botao-ver-receita">Ver Receita</a>
+                        </div>
+                    </div>
+
+                    <div class="cartao-receita">
+                        <div class="imagem-receita" style="background-image: url('/placeholder.svg?height=300&width=400')"></div>
+                        <div class="conteudo-receita">
+                            <div class="tags-receita">
+                                <span class="tag">Bulking</span>
+                                <span class="tag">Café da Manhã</span>
+                            </div>
+                            <h3>Wrap de Ovo com Abacate</h3>
+                            <div class="info-receita">
+                                <div class="avaliacao">
+                                    <span class="estrelas">★★★★☆</span>
+                                    <span class="numero-avaliacoes">(15)</span>
+                                </div>
+                                <div class="tempo-preparo">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                                    <span>15 min</span>
+                                </div>
+                            </div>
+                            <a href="receita.html?id=9" class="botao-ver-receita">Ver Receita</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="conteudo-rodape">
+                <div class="coluna-rodape sobre-site">
+                    <h3>FitCooker</h3>
+                    <p>Sua plataforma de receitas saudáveis para alcançar seus objetivos fitness.</p>
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="coluna-rodape links-rapidos">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="receitas.html">Receitas</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape categorias-rodape">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="categoria.html?tag=bulking">Bulking</a></li>
+                        <li><a href="categoria.html?tag=cutting">Cutting</a></li>
+                        <li><a href="categoria.html?tag=lowcarb">Low Carb</a></li>
+                        <li><a href="categoria.html?tag=vegetariano">Vegetariano</a></li>
+                        <li><a href="categoria.html?tag=cheatmeal">Sair da Dieta</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape contato">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:contato@fitcooker.com">contato@fitcooker.com</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>São Paulo, SP - Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="direitos-autorais">
+                <p>&copy; 2025 FitCooker. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+

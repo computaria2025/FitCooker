@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adicionar Receita - FitCooker</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap">
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="container">
+            <div class="logo">
+                <h1>Fit<span>Cooker</span></h1>
+            </div>
+            <nav class="navegacao">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="receitas.html">Receitas</a></li>
+                    <li><a href="categorias.html">Categorias</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                </ul>
+            </nav>
+            <div class="acoes-usuario">
+                <button class="botao-pesquisa" id="botaoPesquisa">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                </button>
+                <a href="perfil.html" class="botao-perfil">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                </a>
+                <a href="adicionar-receita.html" class="botao-adicionar ativo">Adicionar Receita</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="barra-pesquisa" id="barraPesquisa">
+        <div class="container">
+            <form class="formulario-pesquisa">
+                <input type="text" placeholder="Pesquisar receitas..." class="campo-pesquisa">
+                <button type="submit" class="botao-enviar-pesquisa">Buscar</button>
+            </form>
+        </div>
+    </div>
+
+    <main class="pagina-adicionar-receita">
+        <div class="container">
+            <div class="cabecalho-pagina">
+                <h1>Adicionar Nova Receita</h1>
+                <p>Compartilhe sua receita fit favorita com a comunidade</p>
+            </div>
+
+            <form class="formulario-receita">
+                <div class="secao-formulario">
+                    <h2>Informações Básicas</h2>
+                    <div class="campo-formulario">
+                        <label for="titulo">Título da Receita*</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Omelete Proteico com Legumes" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="descricao">Descrição*</label>
+                        <textarea id="descricao" name="descricao" placeholder="Descreva brevemente sua receita..." required></textarea>
+                    </div>
+
+                    <div class="campo-formulario upload-imagem">
+                        <label>Imagem da Receita*</label>
+                        <div class="area-upload" id="areaUpload">
+                            <div class="conteudo-upload">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="17 8 12 3 7 8"></polyline><line x1="12" y1="3" x2="12" y2="15"></line></svg>
+                                <p>Arraste e solte uma imagem ou clique para selecionar</p>
+                                <span class="formatos-suportados">Formatos suportados: JPG, PNG (Máx: 5MB)</span>
+                            </div>
+                            <input type="file" id="imagemReceita" name="imagemReceita" accept="image/jpeg, image/png" class="input-arquivo" required>
+                        </div>
+                        <div class="preview-imagem" id="previewImagem">
+                            <img src="/placeholder.svg" alt="Preview da imagem" id="imagemPreview">
+                            <button type="button" class="botao-remover-imagem" id="removerImagem">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="categorias">Categorias*</label>
+                        <div class="selecao-categorias">
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="bulking" name="categorias[]" value="bulking">
+                                <label for="bulking">Bulking</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="cutting" name="categorias[]" value="cutting">
+                                <label for="cutting">Cutting</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="lowcarb" name="categorias[]" value="lowcarb">
+                                <label for="lowcarb">Low Carb</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="vegetariano" name="categorias[]" value="vegetariano">
+                                <label for="vegetariano">Vegetariano</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="vegano" name="categorias[]" value="vegano">
+                                <label for="vegano">Vegano</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="semgluten" name="categorias[]" value="semgluten">
+                                <label for="semgluten">Sem Glúten</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="semlactose" name="categorias[]" value="semlactose">
+                                <label for="semlactose">Sem Lactose</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="cheatmeal" name="categorias[]" value="cheatmeal">
+                                <label for="cheatmeal">Sair da Dieta</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="cafedamanha" name="categorias[]" value="cafedamanha">
+                                <label for="cafedamanha">Café da Manhã</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="almoco" name="categorias[]" value="almoco">
+                                <label for="almoco">Almoço/Jantar</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="lanche" name="categorias[]" value="lanche">
+                                <label for="lanche">Lanche</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="sobremesa" name="categorias[]" value="sobremesa">
+                                <label for="sobremesa">Sobremesa</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="postreino" name="categorias[]" value="postreino">
+                                <label for="postreino">Pós-treino</label>
+                            </div>
+                            <div class="categoria-checkbox">
+                                <input type="checkbox" id="proteico" name="categorias[]" value="proteico">
+                                <label for="proteico">Proteico</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="tempoPreparo">Tempo de Preparo (minutos)*</label>
+                        <input type="number" id="tempoPreparo" name="tempoPreparo" min="1" placeholder="Ex: 15" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="porcoes">Número de Porções*</label>
+                        <input type="number" id="porcoes" name="porcoes" min="1" placeholder="Ex: 1" required>
+                    </div>
+
+                    <div class="campo-formulario">
+                        <label for="dificuldade">Nível de Dificuldade*</label>
+                        <select id="dificuldade" name="dificuldade" required>
+                            <option value="">Selecione...</option>
+                            <option value="facil">Fácil</option>
+                            <option value="medio">Médio</option>
+                            <option value="dificil">Difícil</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="secao-formulario">
+                    <h2>Ingredientes</h2>
+                    <p class="dica-formulario">Adicione cada ingrediente com sua quantidade e unidade de medida.</p>
+                    
+                    <div id="listaIngredientes">
+                        <div class="ingrediente-item">
+                            <div class="campo-quantidade">
+                                <input type="text" name="quantidadeIngrediente[]" placeholder="Qtd" required>
+                            </div>
+                            <div class="campo-unidade">
+                                <select name="unidadeIngrediente[]">
+                                    <option value="unidade">unidade(s)</option>
+                                    <option value="g">g</option>
+                                    <option value="kg">kg</option>
+                                    <option value="ml">ml</option>
+                                    <option value="l">l</option>
+                                    <option value="colher_cha">colher(es) de chá</option>
+                                    <option value="colher_sopa">colher(es) de sopa</option>
+                                    <option value="xicara">xícara(s)</option>
+                                    <option value="a_gosto">a gosto</option>
+                                </select>
+                            </div>
+                            <div class="campo-ingrediente">
+                                <input type="text" name="nomeIngrediente[]" placeholder="Nome do ingrediente" required>
+                            </div>
+                            <button type="button" class="botao-remover-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="botao-adicionar-item" id="adicionarIngrediente">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Adicionar Ingrediente
+                    </button>
+                </div>
+
+                <div class="secao-formulario">
+                    <h2>Modo de Preparo</h2>
+                    <p class="dica-formulario">Descreva cada passo do preparo da receita.</p>
+                    
+                    <div id="listaPassos">
+                        <div class="passo-item">
+                            <div class="numero-passo">1</div>
+                            <div class="campo-passo">
+                                <textarea name="passoPreparo[]" placeholder="Descreva o passo..." required></textarea>
+                            </div>
+                            <button type="button" class="botao-remover-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="botao-adicionar-item" id="adicionarPasso">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Adicionar Passo
+                    </button>
+                </div>
+
+                <div class="secao-formulario">
+                    <h2>Dicas (Opcional)</h2>
+                    <p class="dica-formulario">Adicione dicas ou variações para sua receita.</p>
+                    
+                    <div id="listaDicas">
+                        <div class="dica-item">
+                            <div class="campo-dica">
+                                <input type="text" name="dicaReceita[]" placeholder="Adicione uma dica...">
+                            </div>
+                            <button type="button" class="botao-remover-item">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <button type="button" class="botao-adicionar-item" id="adicionarDica">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                        Adicionar Dica
+                    </button>
+                </div>
+
+                <div class="acoes-formulario">
+                    <button type="button" class="botao-secundario">Cancelar</button>
+                    <button type="submit" class="botao-primario">Publicar Receita</button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="rodape">
+        <div class="container">
+            <div class="conteudo-rodape">
+                <div class="coluna-rodape sobre-site">
+                    <h3>FitCooker</h3>
+                    <p>Sua plataforma de receitas saudáveis para alcançar seus objetivos fitness.</p>
+                    <div class="redes-sociais">
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                        </a>
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                        </a>
+                        <a href="#" class="rede-social">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="coluna-rodape links-rapidos">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="index.html">Início</a></li>
+                        <li><a href="receitas.html">Receitas</a></li>
+                        <li><a href="categorias.html">Categorias</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape categorias-rodape">
+                    <h3>Categorias</h3>
+                    <ul>
+                        <li><a href="categoria.html?tag=bulking">Bulking</a></li>
+                        <li><a href="categoria.html?tag=cutting">Cutting</a></li>
+                        <li><a href="categoria.html?tag=lowcarb">Low Carb</a></li>
+                        <li><a href="categoria.html?tag=vegetariano">Vegetariano</a></li>
+                        <li><a href="categoria.html?tag=cheatmeal">Sair da Dieta</a></li>
+                    </ul>
+                </div>
+                <div class="coluna-rodape contato">
+                    <h3>Contato</h3>
+                    <ul>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:contato@fitcooker.com">contato@fitcooker.com</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            <span>São Paulo, SP - Brasil</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="direitos-autorais">
+                <p>&copy; 2025 FitCooker. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
