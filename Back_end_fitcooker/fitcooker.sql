@@ -62,3 +62,8 @@ CREATE TABLE Receitas_Salvas_Salvam (
     FOREIGN KEY (fk_Receitas_id_receita) REFERENCES Receitas (id_receita),
     FOREIGN KEY (fk_Usuario_id_usuario) REFERENCES Usuario (id_usuario)
 );
+
+SELECT * FROM Usuario;
+
+DELETE FROM Usuario
+  WHERE id_usuario = 'user01';
